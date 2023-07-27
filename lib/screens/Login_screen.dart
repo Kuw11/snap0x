@@ -211,7 +211,7 @@ class _LoginState extends State<Login> {
                               subscription = loginStream.listen((futureMap) {
                                 if (futureMap != null) {
                                   futureMap.then((map) {
-                                    if (counter == 10) {
+                                    if (map['logged:']) {
                                       force = true;
                                       pr.hide();
                                       subscription!.cancel();
