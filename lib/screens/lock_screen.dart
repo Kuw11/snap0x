@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:some_name/screens/store_page.dart';
+import 'package:some_name/share/widgets/button.dart';
 import 'run.screen.dart';
 import 'package:some_name/screens/help_screen.dart';
 
@@ -164,8 +166,7 @@ class _LockScreenState extends State<LockScreen> {
                       },
                       minWidth: double.infinity,
                       height: 42,
-                      child: 
-                      const Text(
+                      child: const Text(
                         'Help',
                         style: TextStyle(
                           color: Colors.black,
@@ -175,6 +176,19 @@ class _LockScreenState extends State<LockScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonSnap0x(
+                    fun: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const Scaffold(body: StorePage())));
+                    },
+                    title: 'store',
+                  )
                 ],
               ),
             ),
